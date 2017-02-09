@@ -16,6 +16,9 @@ face_two = './demo.jpeg'
 # Local picture location, please fill in the contents before calling demo
 face_search = './demo.jpeg'
 
+#国际版的服务器地址
+#the server of international version
+api_server_international = 'https://api-us.faceplusplus.com/facepp/v3/'
 
 # Import system libraries and define helper functions
 # 导入系统库并定义辅助函数
@@ -40,6 +43,9 @@ def print_result(hit, result):
 # 首先，导入SDK中的API类
 from facepp import API, File
 
+
+#创建一个API对象，如果你是国际版用户，代码为：api = API(API_KEY, API_SECRET, srv=api_server_international)
+#Create a API object, if you are an international user,code: api = API(API_KEY, API_SECRET, srv=api_server_international)
 api = API(API_KEY, API_SECRET)
 
 # 创建一个Faceset用来存储FaceToken
