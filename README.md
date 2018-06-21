@@ -4,7 +4,7 @@ There are two parts of this demo.
  1. A Python API (with flask)
  2. A front end Ract App.
 
-Here, I will discuss the backend which is the api part. For front end, click here.
+Here, I will discuss the backend which is the api part. For front end, click (here)[https://github.com/zainulabidin302/FacePlusPlus-React-Demo].
 
 # Flask API for FacePlusPlus
 
