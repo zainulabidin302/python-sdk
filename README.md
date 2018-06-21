@@ -23,3 +23,9 @@ Once you have these packages installed via pip, you can run the app like this.
 
 (assuming that python is pointing to python2
 
+If you have any questions, create an issue. 
+
+Thank you
+
+[Zain](https://linkedin.com/in/zain-ulabidin/)
+
