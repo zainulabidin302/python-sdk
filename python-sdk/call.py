@@ -3,8 +3,9 @@
 
 # 您需要先注册一个App，并将得到的API key和API secret写在这里。
 # You need to register your App first, and enter you API key/secret.
-API_KEY = "<YOUR_API_KEY>"
-API_SECRET = "<YOUR_API_SECRETַ>"
+import apikey
+API_KEY = apikey.API_KEY 
+API_SECRET = apikey.API_SECRET 
 
 # 网络图片的URL地址,调用demo前请填上内容
 # The url of network picture, please fill in the contents before calling demo
@@ -23,8 +24,7 @@ api_server_international = 'https://api-us.faceplusplus.com/facepp/v3/'
 # Import system libraries and define helper functions
 # 导入系统库并定义辅助函数
 from pprint import pformat
-
-
+from time import sleep 
 def print_result(hit, result):
     def encode(obj):
         if type(obj) is unicode:
@@ -47,12 +47,15 @@ from facepp import API, File
 #创建一个API对象，如果你是国际版用户，代码为：api = API(API_KEY, API_SECRET, srv=api_server_international)
 #Create a API object, if you are an international user,code: api = API(API_KEY, API_SECRET, srv=api_server_international)
 api = API(API_KEY, API_SECRET)
-
+print('speeling for 2')
+sleep(5)
+#
 # 创建一个Faceset用来存储FaceToken
 # create a Faceset to save FaceToken
-ret = api.faceset.create(outer_id='test')
-print_result("faceset create", ret)
-
+#ret = api.faceset.create(outer_id='test')
+#print_result("faceset create", ret)
+#print('speeling for 2')
+#sleep(2)
 # 对图片进行检测
 # detect image
 Face = {}
@@ -60,14 +63,23 @@ res = api.detect(image_url=face_one)
 print_result("person_one", res)
 Face['person_one'] = res["faces"][0]["face_token"]
 
+print('speeling for 2')
+sleep(6)
+# 对图片进行检测
 res = api.detect(image_file=File(face_two))
 print_result("person_two", res)
 Face['person_two'] = res["faces"][0]["face_token"]
 
+print('speeling for 2')
+sleep(5)
+# 对图片进行检测
 # 将得到的FaceToken存进Faceset里面
 # save FaceToken in Faceset
 api.faceset.addface(outer_id='test', face_tokens=Face.itervalues())
 
+print('speeling for 2')
+sleep(6)
+# 对图片进行检测
 # 对待比对的图片进行检测，再搜索相似脸
 # detect image and search same face
 ret = api.detect(image_file=File(face_search))
@@ -84,6 +96,9 @@ for k, v in Face.iteritems():
         break
 
 
+print('speeling for 2')
+sleep(5)
+# 对图片进行检测
 # 删除无用的人脸库
 # delect faceset because it is no longer needed
 api.faceset.delete(outer_id='test', check_empty=0)

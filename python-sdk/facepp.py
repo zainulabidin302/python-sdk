@@ -70,7 +70,7 @@ class APIError(Exception):
 class API(object):
     key = None
     secret = None
-    server = 'https://api-cn.faceplusplus.com/facepp/v3/'
+    server = 'https://api-us.faceplusplus.com/facepp/v3/'
 
     decode_result = True
     timeout = None
